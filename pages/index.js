@@ -1,6 +1,7 @@
 import Locationselector from '../components/Locationselector'
 import Map from '../components/Map'
 import Navbar from '../components/Navbar' 
+import Confirm from '../components/Confirm'
 
 const style = {
   wrapper: `h-screen w-screen flex flex-col`,
@@ -24,6 +25,7 @@ export default function Home() {
           {/* location selector */}
           <Locationselector />
           {/* cofirm ride */}
+          <Confirm />
         </div>
       </div>
     </div>
