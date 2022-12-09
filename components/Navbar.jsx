@@ -10,9 +10,13 @@ const style = {
 const Navbar = () => {
   return <div className={style.wrapper}>
     <Image src={logo} height={50} width={50} objectFit='contain' />
-    <div>
+    {currentAccount ? (
+      <div>welcome</div>
+    ): (
+      <div>
       <button className='bg-white text-black px-4 py-2 text-sm font-bold rounded-full'>Connect Wallet</button>
     </div>
+    )}
   </div>;
 };
 
