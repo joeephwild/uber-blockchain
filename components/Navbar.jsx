@@ -1,46 +1,18 @@
 import Image from 'next/image'
-import avatar from '../public/assets/avatar.png'
+import logo from '../public/assets/uber-logo.png'
 import { BsPerson } from 'react-icons/bs'
 
 const style = {
-    wrapper: `h-16 w-full bg-black text-white flex md:justify-around items-center px-60 fixed z-20`,
-    leftMenu: `flex gap-3`,
-    logo: `text-3xl text-white flex cursor-pointer mr-16`,
-    menuItem: `text-lg text-white font-medium flex items-center mx-4 cursor-pointer`,
-    rightMenu: `flex gap-3 items-center`,
-    userImageContainer: `mr-2`,
-    userImage: `h-10 w-10 mr-4 rounded-full p-px object-cover cursor-pointer`,
-    loginButton: `flex items-center cursor-pointer rounded-full hover:bg-[#333333] px-4 py-1`,
-    loginText: `ml-2`,
+    wrapper: ` w-full bg-[#101010] h-11 text-white flex justify-between items-center px-6 fixed z-70`,
   }
 
   const currentAccount = '0x013166D598AB78A8ddf8C1bF34Ff9bC7C50D36D2'
 const Navbar = () => {
   return <div className={style.wrapper}>
-      <div className={style.leftMenu}>
-          <div className={style.logo}>uber</div>
-          <div className={style.menuItem}>Ride</div>
-          <div className={style.menuItem}>Drive</div>
-          <div className={style.menuItem}>More</div>
-      </div>
-      <div className={style.rightMenu}>
-          <div className={style.menuItem}>Help</div>
-          <div className={style.menuItem}>Joseph</div>
-          <div className={style.userImageContainer}>
-              <Image src={avatar} width={40} height={40} alt="" />
-          </div>
-          {currentAccount ? (
-            <div>
-              {currentAccount.slice(0, 6)}...{currentAccount.slice(39)}
-            </div>
-          ) : (
-            <div className={style.loginButton} onClick={() => connectWallet()}>
-              <BsPerson />
-              <span className={style.loginText}>Log in</span>
-            </div>
-          )}
-         
-      </div>
+    <Image src={logo} height={50} width={50} objectFit='contain' />
+    <div>
+      <button className='bg-white text-black px-4 py-2 text-sm font-bold rounded-full'>Connect Wallet</button>
+    </div>
   </div>;
 };
 
